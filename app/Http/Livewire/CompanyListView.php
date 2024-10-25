@@ -10,7 +10,6 @@ class CompanyListView extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'bootstrap';
 
     public function deleteCompany($companyId)
     {
@@ -29,7 +28,7 @@ class CompanyListView extends Component
 
     public function render()
     {
-        $companies = Company::paginate(10);
+        $companies = Company::paginate(2);
 
         return view('livewire.company-list-view', ['companies' => $companies]);
     }
